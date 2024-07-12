@@ -62,17 +62,17 @@ def generate_quiz(grade, topic, number):
     elif number > 10:
         number = 10
 
-    prompt_e = f"Generate {number} easy level practice questions for grade {grade} on the topic of {topic}. Provide the question with heading Q:, the answer as just the number with heading A:. Do not add other headings"
+    prompt_e = f"Generate {number} easy level practice questions for grade {grade} on the topic of {topic}. Provide the question with heading Q:, the answer as just the number with heading A:. Do not add other headings and do not use LaTeX or special formatting"
 
     text_e = generate_text(prompt_e)
     questions_e, answers_e = parse_questions_answers(text_e)
 
-    prompt_m = f"Generate {number-1} medium level practice questions for grade {grade} on the topic of {topic}. Provide the question with heading Q:, the answer as just the number with heading A:. Do not add other headings"
+    prompt_m = f"Generate {number-1} medium level practice questions for grade {grade} on the topic of {topic}. Provide the question with heading Q:, the answer as just the number with heading A:. Do not add other headings and do not use LaTeX or special formatting"
 
     text_m = generate_text(prompt_m)
     questions_m, answers_m = parse_questions_answers(text_m)
 
-    prompt_h = f"Generate {number-2} hard level practice questions for grade {grade} on the topic of {topic}. Provide the question with heading Q:, the answer as just the number with heading A:. Do not add other headings"
+    prompt_h = f"Generate {number-2} hard level practice questions for grade {grade} on the topic of {topic}. Provide the question with heading Q:, the answer as just the number with heading A:. Do not add other headings and do not use LaTeX or special formatting"
 
     text_h = generate_text(prompt_h)
     questions_h, answers_h = parse_questions_answers(text_h)
